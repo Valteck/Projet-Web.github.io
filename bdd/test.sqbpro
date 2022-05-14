@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="E:/Bureau/WEB/XAMPP/htdocs/Projetweb/bdd/test.sqlite" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser query pragmas" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1352"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,7:maincountry"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="comptes" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="46"/><column index="2" value="71"/><column index="3" value="90"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="country" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="40"/><column index="2" value="174"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="player" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="78"/><column index="2" value="40"/><column index="3" value="60"/><column index="4" value="89"/><column index="5" value="78"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="team" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="78"/><column index="2" value="126"/><column index="3" value="172"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">
+create  table country (
+   id    int  primary  key, 
+
+   name  varchar(32)  unique  not  null
+) ;
+
+
+/*Cette première table permet d'enregistrer des pays. Chaque pays possède un ID, qui constitue sa clé primaire. Il est décrit par un nom, qui doit être unique, et non nul.
+*/
+
+
+create  table team (
+   country_id  int  not  null  references country(id) , 
+   id  int  not  null, 
+    
+   name  varchar(32)  unique  not  null, 
+
+    constraint pk_team  primary  key (id, country_id)
+) ;
+
+
+/*Notre deuxième table permet de stocker des équipes. Chaque équipe appartient à un pays, représenté par la colonne country_id, déclaré comme clé étrangère sur la colonne id de la table country.
+
+Il possède une déclaration de contrainte sur une table : une clé primaire composite, sur les colonnes id et country_id. Une clé primaire déclarée sur plusieurs colonnes est appelée clé primaire composite .*/
+
+
+create  table player (
+   country_id           int  not  null  references country(id) , 
+   id                   int  not  null, 
+   team_id              int  references team(id), 
+   family_name  varchar(32)  not  null, 
+   first_name   varchar(32)  not  null, 
+   constraint pk_player  primary  key (id, country_id)
+) ;</sql><sql name="SQL 2">insert into country(id,name) values('1','France') ;
+insert into country(id,name) values('2','Espagne') ;
+insert into country(id,name) values('3','Angleterre') ;
+insert into country(id,name) values('4','Allemagne') ;
+insert into country(id,name) values('5','Italie') ;
+
+insert into team(country_id,id,name) values('1','1','Frenchykip') ;
+insert into team(country_id,id,name) values('4','2','Allemagnekip') ;
+insert into team(country_id,id,name) values('5','3','Italiebie') ;
+insert into team(country_id,id,name) values('2','4','Espagnolllaaa') ;
+insert into team(country_id,id,name) values('3','5','english_only') ;</sql><sql name="SQL 3">insert into COMPTES(login,password) values( 'valteck','valteck');
+insert into COMPTES(login,password,statut) values( 'cubers','cubers','administrateur')</sql><sql name="SQL 4">CREATE TABLE &quot;comptes&quot; (
+&quot;login&quot; VARCHAR PRIMARY KEY NOT NULL DEFAULT (null),
+&quot;password&quot; VARCHAR DEFAULT (null),
+&quot;statut&quot; VARCHAR NOT NULL DEFAULT utilisateur)</sql><sql name="SQL 5">drop table comptes;</sql><current_tab id="2"/></tab_sql></sqlb_project>
