@@ -1,3 +1,6 @@
+/* On importe via l'API de Google Font notre police et on en définit ses paramètres*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
 	box-sizing : border-box;
 }
@@ -7,94 +10,183 @@ body{
 	margin-left:5%;
 	margin-right:5%;
 	margin-bottom:2%;
-	
+    font-family: "Roboto", sans-serif!important;
 }
 
 h1{
-	color: orange;
+	color: #1a5276;
 	text-align : center;
 	font-size:150%;
 }
 
+h2{
+	font-weight: bold;
+
+text-align: center;
+}
+
 a:link, a:active, a:visited {
-	color: #a71817;
+	color: #fdb0aa ;
 	background-color: transparent;
 }
 
 a:hover {
-	color: #a71817;
+	color: lightblue!important;
 	text-decoration: none;
 	background-color: transparent;
 	text-decoration: underline;
 }
 
+
+
 header {
 	width:100%;
 	padding: 1%;
-	border:2px solid orange;
+	border:2px solid #1a5276;
+	margin-top:2%;
+	border-radius: 30px;
 	margin-bottom:2%;
-	
-	/* background-image: url(rt.png);
-		background-repeat: no-repeat;
-	background-position: left center; */
+
 }
 
 nav {
-	background-color:orange;
-	float:left;
-	width:32%;
+	background-color:#1a5276;
 	padding:1%;
-	border:2px solid orange;
+	border:2px solid #1a5276;
 	margin-bottom:2%;
+	border-radius: 30px;
 }
+
+nav p{
+color : orange ;
+text-align: center;
+}
+
+legend{
+color: #fdb0aa;
+font-weight: bold;
+text-align: center;
+}
+
+.log{
+	color: #fdb0aa;
+	text-transform:UPPERCASE;
+	}
+
+input{
+	margin:5px!important;
+	border-radius: 30px!important;
+}
+
+select{
+		border-radius: 30px;
+}
+
+.user{
+	color : orange ;
+	text-align: center;
+	font-weight: bold;
+	}
+
+.btn-success{
+	display: block!important;
+     margin-left: auto!important;
+    margin-right: auto!important;
+
+}
+
+mark.vrai{
+	background-color: green!important;
+	font-weight: bold!important;
+	color: white!important;
+		border-radius: 30px!important;
+
+	}
+
+mark.faux{
+	background-color: red!important;
+	font-weight: bold;
+	color: white;
+		border-radius: 30px!important;
+
+	}
 
 article {
-	float:right;
-	width:65%;
 	padding:1%;
 	padding-bottom:2%;
-	border:2px solid orange;
+	border:2px solid #1a5276;
 	margin-bottom:2%;
+	border-radius: 30px;
+
 }
 
+section {
+	padding:1%;
+	padding-bottom:2%;
+	border:2px solid red;
+	margin-bottom:2%;
+	border-radius: 30px;
+}
 
+.statut{
 
+color:lightcoral;
+font-weight: bold;
+}
+
+/* Style du footer */
+/* Configure les couleur de fond et d'écriture du footer */
 footer 
 {
 	width:100%;
 	clear: both;
 	margin-top:2%;
-	background-color: orange;
+	background-color:#1a5276;
+	color: white;
 	padding:1%;
-	border:2px solid orange;
-	
+	text-align:center;
+
+	border-radius: 30px;
 }
 
+.copy{
+	font-size: 115%;
+}
+
+.iut{
+	color: rgba(255,255,255, 0.8);
+}
 
 table /* Le tableau en lui-même */
 {
-	margin: auto; /* Centre le tableau */
-	border: 2px solid orange; /* Bordure du tableau avec effet 3D (solid) */
-	border-collapse: collapse; /* Colle les bordures entre elles */
-	
-}
+	margin: auto!important; /* Centre le tableau */
+	border: 2px solid #1a5276!important; /* Bordure du tableau avec effet 3D (solid) */
+	border-collapse: collapse!important; /* Colle les bordures entre elles */
+	border-radius: 30px!important;
+
+
+    }
 
 th /* Les cellules d'en-tête */
 {
-	background-color: orange;
-	color: white;
-	font-size: 1.1em;
-	
+	background-color: #1a5276!important;
+	color: white!important;
+	font-size: 1.1em!important;
+	text-align: center!important;
+	padding: 5px!important;
+	border: 1px solid black!important;
 }
 
 td /* Les cellules normales */
 {
-	border: 1px solid orange;
-	text-align: center; /* Tous les textes des cellules seront centrés*/
-	padding: 5px; /* Petite marge intérieure aux cellules pour éviter que le texte touche les bordures */
+	border: 1px solid #1a5276!important;
+	text-align: center!important; /* Tous les textes des cellules seront centrés*/
+	padding: 5px!important; /* Petite marge intérieure aux cellules pour éviter que le texte touche les bordures */
+
 }
 tr
 {
-	border: 1px solid black;
+	border: 1px solid black!important;
 	
 }
+
